@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Counter({ count }) {
+function Counter({ currentCount }) {
   return (
       <div>
-        Counter: {count !== undefined ? count : "null"}
+        Counter: {currentCount !== undefined ? currentCount : "null"}
       </div>
   );
 }
