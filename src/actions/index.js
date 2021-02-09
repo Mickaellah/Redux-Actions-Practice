@@ -1,3 +1,6 @@
+import ChangeTemperature from "../components/ChangeTemperature"
+import CurrentCity from "../components/CurrentCity"
+
 // function that returns an action type and a text value
 export function addSpecialText(text) {
   return {
@@ -19,15 +22,30 @@ export function decrease() {
   }
 }
 
-export function searchUserName(firstName) {
+export function searchUser(firstName) {
+  return {
+      type: "SEARCH_USER",
+      value: firstName
+  }
+}
+
+export function filterUserName(name) {
     return {
-      type: "SEARCH_USERNAME",
-      payload: firstName
+      type: "FILTER_USERNAME",
+      payload: name
     }
 }
 
-export function updateUsers() {
+export function changeTemperature(temp = 1) {
   return {
-      type: "UPDATE_USER"
+    type: "CHANGE_TEMPERATURE",
+    payload: temp
   }
+}
+
+export function currentCity(text) {
+    return {
+        type: "CURRENT_CITY",
+        payload: text
+    }
 }

@@ -16,21 +16,30 @@ function currentCount(state = 0, action){
 
 // incomplete reducer function that should check an action prop type to return an array of users 
 
-function users(user = "", action){
+function users(state = [], action){
     switch(action.type) {
-        case "UPDATE_USER":
-            return action.payload
+        
         default:
-            return user
+            return state
     }
 }
 
-function currentCity(state=""){
-  return state;
+function currentCity(state="", action){
+	switch(action.type) {
+		case "CURRENT_CITY": 
+			return action.payload
+		default:
+			return state
+	}
 }
 
-function currentTemp(state=0){
-  return state;
+function currentTemp(state = 0, action){
+    switch(action.type) {
+        case "CHANGE_TEMPERATURE":
+			return state + action.payload
+		default: 
+		return state
+    }
 }
 
 function displayModal(state=false){
@@ -49,17 +58,11 @@ function imageScale(state=1){
   return state
 }
 
-export function searchTexts(text) {
-    return {
-        type: "SEARCH_TEXTS",
-        payload: text
-    }
-}
 
 function searchText(state = "", action){
     switch(action.type) {
-        case "SEARCH_TEXTS":
-            return action.payload
+        case "SEARCH_USER":
+            return action.value
         default:
             return state
     }
