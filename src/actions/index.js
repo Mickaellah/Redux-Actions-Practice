@@ -29,23 +29,36 @@ export function searchUser(firstName) {
   }
 }
 
-export function filterUserName(name) {
-    return {
-      type: "FILTER_USERNAME",
-      payload: name
-    }
-}
-
-export function changeTemperature(temp = 1) {
+export function sortUsers(currentUserSort) {
   return {
-    type: "CHANGE_TEMPERATURE",
-    payload: temp
+    type: "SORT_USERS",
+    value: currentUserSort
   }
 }
 
-export function currentCity(text) {
-    return {
-        type: "CURRENT_CITY",
-        payload: text
-    }
+export function addUser(user) {
+  return {
+    type: "ADD_USER",
+    value: user
+  }
+}
+
+export function removeUser() {
+  return {
+    type: "REMOVE_USER",
+  }
+}
+
+export function setCurrentCity(currentCity) {
+  return {
+    type: "SET_CURRENT_CITY",
+    value: currentCity
+  }
+}
+
+export function setCurrentTemp(temp) {
+  return {
+    type: "SET_CURRENT_TEMP",
+    value: temp
+  }
 }

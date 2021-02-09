@@ -1,14 +1,14 @@
 import React from 'react';
 import { InputLabel, Select, MenuItem } from '@material-ui/core';
 
-function CityDropDown({ set }) {
+function CityDropDown({ set, text }) {
   return (
       <div>
         <InputLabel id="label">Select Current City</InputLabel> 
         <Select
           labelId="label" 
           id="select" 
-          value="Austin"
+          value={text}
           onChange={
           (e)=>{
             if(set){

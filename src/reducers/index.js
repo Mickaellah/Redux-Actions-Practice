@@ -18,7 +18,10 @@ function currentCount(state = 0, action){
 
 function users(state = [], action){
     switch(action.type) {
-        
+        case "ADD_USER":
+            return [...state, action.value]
+        case "REMOVE_USER":
+            return state.slice(0, state.length - 1);
         default:
             return state
     }
@@ -26,8 +29,8 @@ function users(state = [], action){
 
 function currentCity(state="", action){
 	switch(action.type) {
-		case "CURRENT_CITY": 
-			return action.payload
+		case "SET_CURRENT_CITY": 
+			return action.value
 		default:
 			return state
 	}
@@ -35,8 +38,8 @@ function currentCity(state="", action){
 
 function currentTemp(state = 0, action){
     switch(action.type) {
-        case "CHANGE_TEMPERATURE":
-			return state + action.payload
+        case "SET_CURRENT_TEMP":
+			return action.value
 		default: 
 		return state
     }
@@ -50,8 +53,14 @@ function imageUrl(state=""){
   return state
 }
 
-function currentUserSort(state="first_name"){
-  return state;
+function currentUserSort(state="first_name", action){
+    switch(action.type) {
+        case "SORT_USERS":
+            return action.value
+        default:
+            return state
+    }
+
 }
 
 function imageScale(state=1){

@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
-import {currentCity} from '../actions';
 import CityDropDown from '../components/CityDropDown';
+import {setCurrentCity} from '../actions';
 
-const mapDispatchToProps = {
-    set: (text) => currentCity(text)
+const mapDipsatchToState = {
+    set: setCurrentCity
 }
 
-export default connect(null, mapDispatchToProps) (CityDropDown);
+export default connect(null, mapDipsatchToState) (CityDropDown);
