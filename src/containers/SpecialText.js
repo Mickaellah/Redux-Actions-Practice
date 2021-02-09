@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import SpecialText from "../components/SpecialText";
-import addSpecialText from '../reducers/index';
 
-export function specialText({text}) {
+function specialText(text) {
     return <SpecialText text={text} />
 }
 
@@ -13,8 +12,4 @@ function mapStateToProps(state){
   }
 }
 
-const mapDispatchToProps = {
-  addSpecialText,
-}
-
-export default connect(mapStateToProps, {mapDispatchToProps})(specialText);
+export default connect(mapStateToProps, null) (SpecialText);

@@ -1,53 +1,25 @@
 import { combineReducers } from "redux";
 
 // incomplete reducer function that checks an action prop type to detemine a counter number
-export function increase(count = 1) {
-    return {
-        type: "INCREASE",
-        payload: count
-    }
-}
 
-export function decrease(count = 1) {
-    return {
-        type: "DECREMENT",
-        payload: count
-    }
-}
 
 function currentCount(state = 0, action){
   switch(action.type) {
     case "INCREASE":
-      return state + action.payload;
+      return state + 1;
     case "DECREMENT":
-      return state - action.payload;
+      return state - 1;
     default :
         return state
   }
 }
 
-// incomplete reducer function that should check an action prop type to return an array of users
-export function updateUsers(users) {
-    return {
-        type: "UPDATE_USER",
-        payload: users
-    }
-} 
+// incomplete reducer function that should check an action prop type to return an array of users 
 
-function users(user = {
-    id: 0,
-    name: "",
-    address: "",
-    phone: 0,
-    occupation: "",
-    avatar: ""
-}, action){
+function users(user = "", action){
     switch(action.type) {
         case "UPDATE_USER":
-            return {
-                ...user,
-                ...action.payload
-            }
+            return action.payload
         default:
             return user
     }
@@ -94,12 +66,7 @@ function searchText(state = "", action){
 }
 
 // complete reducer function that should check action prop type ""SET_SPECIAL_TEXT" to determine state value
-export function addSpecialText(text) {
-    return {
-        type: "ADD_SPECIAL_TEXT",
-        payload: text
-    }
-}
+
 
 function specialText(state = "", action) {
     switch(action.type) {

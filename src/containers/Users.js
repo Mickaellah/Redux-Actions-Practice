@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Users from '../components/Users';
-import {updateUsers} from '../reducers/index';
+import {updateUsers} from '../actions';
 
 export function users({users}) {
     return <Users users={users} />
