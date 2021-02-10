@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import Users from '../components/Users';
+import {getUser} from '../actions'
 
 
 function mapStateToProps(state){
@@ -10,4 +11,8 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, null) (Users)
+const mapDispatchToProps = {
+    getUser,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Users)

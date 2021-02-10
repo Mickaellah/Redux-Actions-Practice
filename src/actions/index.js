@@ -82,3 +82,14 @@ export function showModal() {
     type: "SHOW_MODAL",
   }
 }
+
+export function getUser() {
+  return async (dispatch) => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
+    const users = await response.json();
+    dispatch({
+      type: "GET_USERS",
+      value: users
+    })
+  }
+}
