@@ -22,7 +22,7 @@ function users(state = [], action){
             return [...state, action.value]
         case "REMOVE_USER":
             return state.slice(0, state.length - 1);
-        case "GET_USERs":
+        case "GET_USERS":
           return action.value 
         default:
             return state
