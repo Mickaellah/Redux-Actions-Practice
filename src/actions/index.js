@@ -62,3 +62,23 @@ export function setCurrentTemp(temp) {
     value: temp
   }
 }
+
+export function uploadImageUrl(url) {
+  return {
+    type: "UPLOAD_IMAGE_URL",
+    value: url
+  }
+}
+
+export function scaleImage(scale) {
+  return {
+    type: "SCALE_IMAGE",
+    value: scale
+  }
+}
+
+export function showModal() {
+  return {
+    type: "SHOW_MODAL",
+  }
+}

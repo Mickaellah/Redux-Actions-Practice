@@ -45,12 +45,22 @@ function currentTemp(state = 0, action){
     }
 }
 
-function displayModal(state=false){
-  return state;
+function displayModal(state=false, action){
+  switch(action.type) {
+    case "SHOW_MODAL":
+      return !state
+    default:
+      return state;
+  }
 }
 
-function imageUrl(state=""){
-  return state
+function imageUrl(state="", action){
+  switch(action.type) {
+    case "UPLOAD_IMAGE_URL":
+      return action.value
+    default:
+      return state
+  }
 }
 
 function currentUserSort(state="first_name", action){
@@ -63,8 +73,13 @@ function currentUserSort(state="first_name", action){
 
 }
 
-function imageScale(state=1){
-  return state
+function imageScale(state=1, action){
+  switch(action.type) {
+    case "SCALE_IMAGE":
+      return action.value
+    default:
+      return state
+  }
 }
 
 

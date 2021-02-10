@@ -11,15 +11,15 @@ import SpecialText from "./containers/SpecialText";
 import UserButtons from "./containers/UsersButton";
 import Thermostat from "./containers/Thermostat";
 import ChangeTemperature from "./containers/ChangeTemperature";
-import ImagePreview from "./components/ImagePreview";
-import ImageUrlTextBox from "./components/ImageUrlTextBox";
+import ImagePreview from "./containers/ImagePreview";
+import ImageUrlTextBox from "./containers/ImageUrlTextBox";
 import CurrentCity from "./containers/CurrentCity";
-import CityDropDown from "./components/CityDropDown";
+import CityDropDown from "./containers/CityDropDown";
 import SearchTextBox from "./containers/SearchTextBox";
 import SortUsers from "./containers/SortUsers";
-import ScaleImage from "./components/ScaleImage";
-import Modal from "./components/Modal";
-import ShowModal from "./components/ShowModal";
+import ScaleImage from "./containers/ScaleImage";
+import Modal from "./containers/Modal";
+import ShowModal from "./containers/ShowModal";
 
 function App() {
   return (
